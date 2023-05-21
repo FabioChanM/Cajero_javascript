@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="">
+    <h1>LOGIN</h1>
+    <label for="">Usuario</label>
+    <input type="text" name="user" id="">
+    <label for="">Password</label>
+    <input type="password" name="contrasena">
+    <input type="button" value="Ingresar" onclick="login(this.form)">
+  </form>
+  <script>
+  function login(form){
+    if(form.user.value=="Itzel"){
+      if(form.contrasena.value=="123"){
+        location="datos_itzel.html";
+      }else{
+        alert("error de contraseña");
+
+      }
+    }
+   else if(form.user.value=="Willy"){
+      if(form.contrasena.value=="124"){
+        location="datos_Willy.html";
+
+      }else{
+        alert("error de contraseña");
+
+      }
+    }
+   else if(form.user.value=="Rosa"){
+      if(form.contrasena.value=="12"){
+        location="datos_Rosa.html";
+
+      }else{
+        alert("error de contraseña");
+
+      }
+    }
+    else{
+      alert("error de usuario");
+    }
+  }
+  </script>
+</body>
+<script src="script.js"></script>
+</html>

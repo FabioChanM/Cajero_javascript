@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Bienvenido al banco de faleo</h1>
+  <label for="">Cuenta de Itzel Saldo:</label>
+  <input type="number" style="display: none;" name="Cantidad1" id="Cant" value="990">
+  <input type="text" style="display: none;" name="Cantidad1" id="C1" value="0">
+  <form action="">
+    <h2>Transferrencias</h2>
+    <input type="button" value="Consultar saldo" id="" onclick="formula1()">
+    <input type="button" value="Ingresar saldo" id="" onclick="formula()">
+    <input type="button" value="Retirar saldo" id="" onclick="formula2()">
+    <input type="button" value="Confirmar" id="btn_confirmar_ingresar" style="display: none;" onclick="formula3()">
+    <input type="button" value="Confirmar" id="btn_confirmar_retirar" style="display: none;" onclick="formula4()">
+    <input type="button" value="Regresar" id="btn_regresar" onclick="regresar()">
+  </form>
+  <script>
+    function formula(){
+      document.getElementById("Cant").style.color = "transparent";
+      document.getElementById("C1").style.display = "block";
+      document.getElementById("btn_confirmar_ingresar").style.display = "block";
+    }
+    function formula2(){
+      document.getElementById("Cant").style.color = "transparent";
+      document.getElementById("C1").style.display = "block";
+      document.getElementById("btn_confirmar_retirar").style.display = "block";
+    }
+  </script>
+  <script>
+    function formula1(){
+          var SaldoT=parseInt(document.getElementById("C1").value);
+        alert("Su saldo es:" + SaldoT);
+    }
+    function formula3(){
+      var SaldoT=parseInt(document.getElementById("Cant").value);
+      var SaldoD=parseInt(document.getElementById("C1").value);
+      document.getElementById("C1").value=(SaldoT+SaldoD);
+      document.getElementById("C1").style.display = "none";
+     if(SaldoT >= 990){
+      document.getElementById("C1").value=(990);
+      alert("Su saldo no puede pasar de 990 por ende se retira lo sobrante");
+     } else{
+      alert("Su trasaccion ha sido exitosa");
+
+     }
+    }
+    function formula4(){
+      var SaldoT=parseInt(document.getElementById("Cant").value);
+      var SaldoD=parseInt(document.getElementById("C1").value);
+      document.getElementById("C1").value=(SaldoT-SaldoD);
+      document.getElementById("C1").style.display = "none";
+      if(SaldoT <= 10){
+      document.getElementById("C1").value=(10);
+      alert("Su saldo no puede ser menor de 10 por ende se le asignara el valor minimo");
+     } else{
+      alert("Su trasaccion ha sido exitosa");
+     }
+    }
+    function regresar(){
+      location="index.html";
+     }
+     function regresar(){
+      location="index.html";
+     }
+  </script>
+</body>
+</html>
